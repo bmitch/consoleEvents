@@ -1,0 +1,11 @@
+{
+    "name": "bmitch/consoleevents",
+    "description": "Events for Laravel Console Commands",
+    "authors": [
+        {
+            "name": "Bill Mitchell",
+            "email": "wkmitch@gmail.com"
+        }
+    ],
+    "require": {}
+}
