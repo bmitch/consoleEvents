@@ -8,5 +8,5 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
- - echo "Starting Travis Build
+ - echo "Starting Travis Build"
 
