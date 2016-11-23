@@ -17,6 +17,9 @@ class Command extends LaravelCommand
      */
     protected $events;
 
+    /**
+     * Class constructor
+     */
     public function __construct()
     {
         parent::__construct();
@@ -24,6 +27,12 @@ class Command extends LaravelCommand
         $this->events = \App::make(Dispatcher::class);
     }
 
+    /**
+     * Runs the command.
+     * @param  InputInterface  $input  Input Interface.
+     * @param  OutputInterface $output Output Interface.
+     * @return integer
+     */
     public function run(InputInterface $input, OutputInterface $output)
     {
         $commandName = $this->getName();
@@ -40,5 +49,4 @@ class Command extends LaravelCommand
 
         return $exitCode;
     }
-
 }

@@ -15,5 +15,9 @@
         "psr-4": {
             "Bmitch\\ConsoleEvents\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpmd/phpmd": "^2.5",
+        "squizlabs/php_codesniffer": "^2.7"
     }
 }
