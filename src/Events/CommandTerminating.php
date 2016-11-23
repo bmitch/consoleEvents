@@ -23,16 +23,16 @@ class CommandTerminating
     /**
      * The command exit code.
      *
-     * @var int
+     * @var integer
      */
     public $exitCode;
 
     /**
      * Create a new event instance.
      *
-     * @param  string $command
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param int $exitCode
+     * @param string         $command  Name of the command.
+     * @param InputInterface $input    Input Interface.
+     * @param integer        $exitCode Command exit code.
      * @return void
      */
     public function __construct($command, InputInterface $input, $exitCode)

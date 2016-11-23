@@ -8,5 +8,6 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
- - echo "Starting Travis Build"
-
+ - vendor/bin/phpmd src text codesize,unusedcode,naming
+ - vendor/bin/phpcs --standard=psr2 src
+ - vendor/bin/phpcs -n --standard=phpcsdocblocks.xml src
