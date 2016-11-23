@@ -1,4 +1,5 @@
 # Console Events for Laravel Commands
+[![Build Status](https://travis-ci.org/bmitch/consoleEvents.svg?branch=master)](https://travis-ci.org/bmitch/consoleEvents)
 
 ## What is it? ##
 This package allows you to have events triggered by your Aritsan Commands. The events available are:
