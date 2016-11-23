@@ -92,6 +92,7 @@ Something like:
 ```
 
 ## Contributing ##
+Please see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License ##
 
