@@ -41,7 +41,14 @@ class Command extends LaravelCommand
             new Events\CommandStarting($commandName, $input)
         );
 
-        $exitCode = parent::run($input, $output);
+        try {
+            $exitCode = parent::run($input, $output);
+        } catch (\Exception $e) {
+            $this->events->fire(
+                new Events\CommandException($commandName, $e, $input)
+            );
+            throw $e;
+        }
 
         $this->events->fire(
             new Events\CommandTerminating($commandName, $input, $exitCode)
