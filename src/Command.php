@@ -18,6 +18,12 @@ class Command extends LaravelCommand
     protected $events;
 
     /**
+     * Holds the time it took to execute the command.
+     * @var float
+     */
+    protected $executionTime;
+
+    /**
      * Class constructor
      */
     public function __construct()
@@ -35,18 +41,45 @@ class Command extends LaravelCommand
      */
     public function run(InputInterface $input, OutputInterface $output)
     {
-        $commandName = $this->getName();
-
         $this->events->fire(
-            new Events\CommandStarting($commandName, $input)
+            new Events\CommandStarting($this, $input)
         );
 
+        $this->startTimer();
         $exitCode = parent::run($input, $output);
+        $this->endTimer();
 
         $this->events->fire(
-            new Events\CommandTerminating($commandName, $input, $exitCode)
+            new Events\CommandTerminating($this, $input, $exitCode)
         );
 
         return $exitCode;
+    }
+
+    /**
+     * Sets the start time of the command.
+     * @return void
+     */
+    protected function startTimer()
+    {
+        $this->startTime = microtime(true);
+    }
+
+    /**
+     * Sets the end time of the command.
+     * @return void
+     */
+    protected function endTimer()
+    {
+        $this->executionTime = microtime(true) - $this->startTime;
+    }
+
+    /**
+     * Get the execution time of the command.
+     * @return float
+     */
+    public function getExecutionTime()
+    {
+        return $this->executionTime;
     }
 }
