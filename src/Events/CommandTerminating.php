@@ -7,9 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 class CommandTerminating
 {
     /**
-     * The command name.
-     *
-     * @var string
+     * The command that is terminating.
+     * @var object
      */
     public $command;
 
@@ -27,13 +26,13 @@ class CommandTerminating
      */
     public $exitCode;
 
+
+
     /**
      * Create a new event instance.
-     *
-     * @param string         $command  Name of the command.
+     * @param object         $command  The command that is terminating.
      * @param InputInterface $input    Input Interface.
      * @param integer        $exitCode Command exit code.
-     * @return void
      */
     public function __construct($command, InputInterface $input, $exitCode)
     {

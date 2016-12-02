@@ -7,9 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 class CommandStarting
 {
     /**
-     * The command name.
-     *
-     * @var string
+     * The command that is starting.
+     * @var object
      */
     public $command;
 
@@ -19,13 +18,11 @@ class CommandStarting
      * @var string
      */
     public $input;
-
+   
     /**
      * Create a new event instance.
-     *
-     * @param  string         $command Name of the command.
+     * @param object         $command The command that is starting.
      * @param  InputInterface $input   Input Interface.
-     * @return void
      */
     public function __construct($command, InputInterface $input)
     {
