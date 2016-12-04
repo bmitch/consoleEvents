@@ -2,16 +2,16 @@
 [![Build Status](https://travis-ci.org/bmitch/consoleEvents.svg?branch=master)](https://travis-ci.org/bmitch/consoleEvents)
 
 ## What is it? ##
-This package allows you to have events triggered by your Aritsan Commands. The events available are:
+This package allows you to have events triggered by your Artisan Commands. The events available are:
 
 `Bmitch\ConsoleEvents\Events\CommandStarting`
-Triggered when an Aritsan Command is starting.
+Triggered when an Artisan Command is starting.
 
 `Bmitch\ConsoleEvents\Events\CommandTerminating`
-Triggered when an Aritsan Command is terminating.
+Triggered when an Artisan Command is terminating.
 
 ## Why use it? ##
-The main reason I created this package was for a use case where multiple commands were executed nightly and I wanted an easy way to log when they start and stopped. By hooking into these events it makes it easy.
+The main reason I created this package was for a use case where multiple commands were executed nightly and I wanted an easy way to log when they started and stopped. By hooking into these events it makes it easy.
 
 ## How to Install ##
 
@@ -21,7 +21,7 @@ composer require bmitch/consoleevents
 ```
 
 ### Modify commands to extend custom class ###
-In any command that you wish to trigger these events simple replace the:
+In any command that you wish to trigger these events simply replace the:
 ```
 use Illuminate\Console\Command;
 ```
